@@ -1,0 +1,35 @@
+//*===Settings===*//
+@import "utils/fonts";
+@import "utils/vars";
+@import "utils/libs";
+@import "utils/mixins";
+@import "utils/animations";
+@import "utils/reset";
+
+
+//*== Main settings teg ==*//
+@import "modules/settings";
+
+//*== Preloader ==*//
+@import "modules/preloader";
+
+//*== Grid ==*//
+@import "modules/grid";
+
+//*== Parallax ==*//
+@import "modules/parallax.scss";
+
+//*== Header ==*//
+@import "modules/header";
+
+//*== Skills ==*//
+@import "modules/skills";
+
+//*== Portfolio ==*//
+@import "modules/portfolio";
+
+//*== Mail ==*//
+@import "modules/mail";
+
+//*== Footer ==*//
+@import "modules/footer";

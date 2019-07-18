@@ -1,0 +1,41 @@
+#mail {
+  h2 + p {
+    text-align: center;
+    font-size: rem(18px);
+  }
+
+  .form-mail {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+
+    label, textarea {
+      margin-top: 10px;
+      width: 100%;
+      height: 30px;
+      border: 1px solid $border;
+      border-radius: 3px;
+      input {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        padding: 0 15px;
+        color: inherit;
+        font-size: 14px;
+      }
+    }
+
+    textarea {
+      height: 150px;
+      padding: 15px;
+      font-family: inherit;
+      color: inherit;
+      font-size: 14px;
+    }
+    button {
+      width: 150px;
+      margin: 20px auto 0;
+    }
+  }
+}

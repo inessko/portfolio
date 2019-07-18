@@ -1,0 +1,98 @@
+//*==Main settings teg==*//
+
+html {
+  line-height: $mainLineHeight;
+  font-size: $mainFontSize;
+  color: $mainFontColor;
+  height: 100%;
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $tableWidth) {
+    font-size: 15px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 14px;
+  }
+}
+
+body {
+  font-family: $mainFont;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: #E7746F;
+  &:hover {
+    text-decoration: none;
+    color: #999;
+  }
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $titleFont;
+  font-size: rem(40px);
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin: 5px 0 5px;
+  color: $primary-color;
+}
+
+h2 {
+  font-size: rem(30px);
+  margin: 0 0 30px;
+}
+
+h2.title2 {
+  display: block;
+  position: relative;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: rem(60px);
+  &:after {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%, -50%);
+    content: '';
+    background: rgba(135, 135, 135, 0.5);
+    width: 100px;
+    height: 1px;
+    margin: 30px auto;
+  }
+}
+
+h3.text-center {
+  font:  $mainFontSize/$mainLineHeight $mainFont, sans-serif;
+}
+h3 {
+  font-size: rem(20px);
+  font-family: $mainFont, sans-serif;
+  font-weight: 400;
+}
+.btn {
+  display: block;
+  padding: 10px 15px;
+  background-color: $primary-color;
+  border-radius: 3px;
+  color: $light-color;
+  font:  16px $mainFont;
+}
+
+

@@ -1,0 +1,143 @@
+.stick {
+  height: 51px;
+}
+
+.header {
+  border-bottom: 1px solid #f5f5f5;
+  background-color: white;
+  position: relative;
+  width: 100%;
+  z-index: 99;
+
+  &.fix {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+}
+
+.navbar {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 10px;
+
+  &-header {
+    max-width: 50%;
+    width: 100%;
+    @media screen and (max-width: $tableWidth) {
+      display: flex;
+      justify-content: space-between;
+      max-width: 100%;
+    }
+
+    .navbar-toggle {
+      display: none;
+      width: 45px;
+      order: 2;
+      background: none;
+      @media screen and (max-width: $tableWidth) {
+        display: block;
+      }
+
+      span {
+        display: block;
+        height: 2px;
+        width: 100%;
+        margin-top: 5px;
+        background-color: $primary-color;
+      }
+    }
+  }
+
+  &-collapse {
+    max-width: 50%;
+    width: 100%;
+    line-height: rem(35px);
+      ul.active {
+        visibility: visible;
+      }
+
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      text-transform: uppercase;
+
+      li:first-child {
+        margin: 0;
+      }
+
+      li {
+        margin-left: 25px;
+
+        a {
+          color: $primary-color;
+          line-height: 35px;
+
+          &:hover {
+            color: $danger-color;
+          }
+        }
+      }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+        max-width: 100%;
+        ul {
+          display: block;
+          height: 0;
+          overflow: hidden;
+          visibility: visible;
+          transition: .2s linear;
+          li:first-child {
+            padding-top: 20px;
+          }
+          li:last-child {
+            padding-bottom: 20px;
+          }
+          li {
+            margin: 0;
+          }
+        }
+      }
+  }
+
+  &-brand {
+    font-weight: 700;
+    font-size: rem(20px);
+    font-family: $titleFont, cursive;
+    letter-spacing: 3px;
+    color: $primary-color;
+  }
+
+  &-nav > li > a {
+    font-size: rem(11px);
+    letter-spacing: 3px;
+    color: $primary-color;
+  }
+}
+
+.navbar .dropdown-menu {
+  border: 0;
+  border-top: 2px solid #E7746F;
+  border-radius: 0;
+}
+
+.navbar .dropdown-menu > li > a {
+  padding: 10px 20px;
+}
+
+.navbar .nav .open > a,
+.navbar .dropdown-menu > li > a:hover,
+.navbar .dropdown-menu > li > a:focus {
+  background: #f5f5f5;
+}
+
+.navbar .navbar-toggle .icon-bar {
+  background: #222;
+}

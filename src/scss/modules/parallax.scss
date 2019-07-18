@@ -1,0 +1,83 @@
+#home {
+  background-image: url(/assets/img/bg-parallax.jpg);
+  background-color: #222;
+  height: 100vh;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  .home-overlay {
+    background-color: rgba(44, 62, 80, 0.3);
+    background-image: url("/assets/img/pattern.png");
+    background-repeat: repeat;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+  }
+  .intro {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    -webkit-transform: translate(0%, -50%);
+    -moz-transform: translate(0%, -50%);
+    -ms-transform: translate(0%, -50%);
+    -o-transform: translate(0%, -50%);
+    transform: translate(0%, -50%);
+    padding: 0 15px;
+    color: white;
+    .start {
+      font-size: 16px;
+      text-transform: none;
+      margin: 15px 0;
+    }
+    h1 {
+      color: $light-color;
+    }
+  }
+  .scroll-down {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-left: -15px;
+    display: block;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .scroll-down span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    margin-left: -9px;
+    width: 18px;
+    height: 28px;
+    background: url(/assets/img/down.svg) no-repeat;
+    background-size: 100%;
+    -webkit-animation-name: drop;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-play-state: running;
+    animation-name: drop;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-play-state: running;
+  }
+}

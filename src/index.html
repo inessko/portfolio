@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webpack</title>
+    <link href="/assets/css/app.css" rel="stylesheet"></head>
+<body>
+<!-- Preloader -->
+
+<div id="preloader">
+    <div id="status"></div>
+</div>
+<!-- end Preloader -->
+
+<!-- main wrapper -->
+<div class="wrapper">
+    <!-- header for content -->
+    <!-- parallax.scss -->
+    <section id="home" class="bg-parallax">
+        <div class="home-overlay"></div>
+        <div class="intro">
+            <div class="start">Привет, меня зовут Мария Полякова и я</div>
+            <h1>Frontend Web Developer</h1>
+        </div>
+        <a href="#services">
+            <div class="scroll-down">
+            <span>
+<!--                <img src="/assets/img/css.svg" alt="">-->
+            </span>
+            </div>
+        </a>
+
+    </section>
+    <!-- parallax.scss end -->
+    <!-- header-->
+    <div class="stick">
+        <header class="header">
+            <div class="container">
+                <nav class="navbar" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Maria Polyakova</a>
+                    </div>
+
+                    <div class="navbar-collapse">
+                        <ul class="navbar-collapse-list">
+                            <li><a href="#home">Главная</a></li>
+                            <li><a href="#skills">Навыки</a></li>
+                            <li><a href="#portfolio">Портфолио</a></li>
+                            <li><a href="#contact">Контакты</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <!-- end header for content -->
+    <!-- wrapper for content -->
+    <div class="content-wrapper">
+        <!-- Skills start -->
+
+        <section class="bgblock-gray" id="skills">
+
+            <div class="container">
+                <h2 class="title2">Навыки</h2>
+                <div class="grid-skill">
+                    <div class="block-skill">
+                        <h3>Frontend</h3>
+                        <div class="block-skill-items">
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/html5.svg" alt="Html5"><span>HTML5</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/css.svg" alt="Css"><span>CSS3</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/js.svg" alt="JS"><span>JavaScript</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/sass.svg" alt="Sass"><span>SASS/SCSS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-skill">
+                        <h3>Frameworks</h3>
+                        <div class="block-skill-items">
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/boot.svg" alt="Bootstrap"><span>Bootstrap</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/vue.svg" alt="Vue"><span>VueJS</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/react.svg" alt="React"><span>React</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/JQuery.svg" alt="React"><span>JQuery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block-skill">
+                        <h3>Tools</h3>
+                        <div class="block-skill-items">
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/git-logo.svg" alt="GitHub"><span>Git</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/github.svg" alt="GitHub"><span>GitHub</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/gitlab.svg" alt="GitHub"><span>GitLab</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/yarn.svg" alt="Yarn"><span>Yarn</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/npm.svg" alt="Npm"><span>Npm</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/webpack.svg" alt="Webpack"><span>Webpack</span>
+                            </div>
+                            <div class="block-skill-items-item">
+                                <img src="/assets/img/icons/babels.svg" alt="Babel"><span>Babel</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- Skills end -->
+        <!-- portfolio  -->
+        <section id="portfolio" class="bgblock">
+            <div class="container">
+                <h2 class="title2">Мои работы</h2>
+
+
+                <div class="grid-portfolio">
+                    <div class="grid-portfolio-items">
+                        <a href="beryoga.html">
+                            <figure class="effect-bubba">
+                                <img src="/assets/img/item-1.jpg" alt="img01">
+                                <figcaption>
+                                    <h2>Beryoga</h2>
+                                    <p>Landing page, адаптивный дизайн</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="grid-portfolio-items">
+                        <a href="beryoga.html">
+                            <figure class="effect-bubba">
+                                <img src="/assets/img/travel.jpg" alt="img01">
+                                <figcaption>
+                                    <h2>Блог о путешествиях</h2>
+                                    <p>Сайт-визитка. Адаптивный дизайн</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="grid-portfolio-items">
+                        <a href="beryoga.html">
+                            <figure class="effect-bubba">
+                                <img src="/assets/img/avto.jpg" alt="img01">
+                                <figcaption>
+                                    <h2>Автозапчасти</h2>
+                                    <p>Интернет-магазин автозабчастей. Адаптивный дизайн.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="grid-portfolio-items">
+                        <a href="beryoga.html">
+                            <figure class="effect-bubba">
+                                <img src="/assets/img/rework.jpg" alt="img01">
+                                <figcaption>
+                                    <h2>Доработка сайта</h2>
+                                    <p>Добавление рейтинга, слайдера и нескольких новых блоков информации</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="grid-portfolio-items">
+                        <a href="beryoga.html">
+                            <figure class="effect-bubba">
+                                <img src="/assets/img/portfolio.jpg" alt="img01">
+                                <figcaption>
+                                    <h2>Шаблон портфолио</h2>
+                                    <p>Разработка портфолио. Адаптивный дизайн.</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                    <div class="grid-portfolio-items">
+                        <a href="beryoga.html">
+                            <figure class="effect-bubba">
+                                <img src="/assets/img/calck.jpg" alt="img01">
+                                <figcaption>
+                                    <h2>Calculators</h2>
+                                    <p>Разработка Главной страницы</p>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div><!-- contaier -->
+
+        </section>
+        <!-- end portfolio  -->
+        <!-- mail  -->
+        <section class="bgblock-gray" id="mail">
+            <div class="container">
+                <h2 class="title2">Напишите мне</h2>
+                <p>Если у вас возникли вопросы, просто напишите мне.</p>
+                <form action="form-mail" class="form-mail">
+                    <label>
+                        <input type="text" placeholder="Имя">
+                    </label>
+                    <label>
+                        <input type="text" placeholder="E-mail">
+                    </label>
+                    <textarea placeholder="Сообщение"></textarea>
+                    <button class="btn">Отправить</button>
+                </form>
+            </div>
+        </section>
+        <!-- end mail  -->
+    </div>
+    <!-- end content wrapper -->
+    <footer>
+        <div class="container">
+            <ul class="link">
+                <li><a href="">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.124 96.123">
+                        <path d="M72.089.02L59.624 0C45.62 0 36.57 9.285 36.57 23.656v10.907H24.037a1.96 1.96 0 0 0-1.96 1.961v15.803a1.96 1.96 0 0 0 1.96 1.96H36.57v39.876a1.96 1.96 0 0 0 1.96 1.96h16.352a1.96 1.96 0 0 0 1.96-1.96V54.287h14.654a1.96 1.96 0 0 0 1.96-1.96l.006-15.803a1.963 1.963 0 0 0-1.961-1.961H56.842v-9.246c0-4.444 1.059-6.7 6.848-6.7l8.397-.003a1.96 1.96 0 0 0 1.959-1.96V1.98A1.96 1.96 0 0 0 72.089.02z"></path>
+                    </svg>
+                </a></li>
+                <li><a href="">
+                    <svg viewBox="1 -35 512 511" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M121.45 253.17l63.56 158.89 82.75-82.76 141.53 112.5L512 .5 0 205.98zm-39.93-47.64l244.05-97.94-194.08 117.36zm287.53-89.25L207.07 264.47l-19.48 73.42-36.04-90.08zM219.2 335.51l9.82-37 15.14 12.04zm171.66 53.4L243.47 271.75l221.9-203zm0 0"></path>
+                    </svg>
+                </a></li>
+            </ul>
+            <p>© 2019 devFrontend</p>
+        </div>
+    </footer>
+</div>
+<!-- end main wrapper -->
+
+</body>
+</html>
