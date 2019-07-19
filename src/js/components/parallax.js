@@ -1,28 +1,47 @@
 const parallax = document.querySelector('#home'),
-      speedParallax = 0.08,
-      menuFix = document.querySelector('.header'),
-      sections = document.querySelectorAll('.scroll-by'),
-      animateItems = document.querySelectorAll('.animate')
-
+  speedParallax = 0.08,
+  menuFix = document.querySelector('.header'),
+  sections = document.querySelectorAll('.scroll-by'),
+  animateItems = document.querySelectorAll('.animate'),
+  preloader = document.querySelector('#preloader'),
+  sliderItem = document.querySelector('.content-wrapper')
+let count = 0
 window.onload = function () {
+  let width = windowWidth()
+  console.log(width)
   loader()
   heightParallax(parallax)
-  window.onresize = () => heightParallax(parallax)
-}
-window.onscroll = () => {
-  BgPosition(parallax)
-  scrollBy()
-  animateShow (animateItems)
+  document.body.addEventListener('wheel', function () {
+    slider(sliderItem)
+  })
+  window.onscroll = () => {
+    BgPosition(parallax)
+    scrollBy()
+    animateShow(animateItems)
+  }
 }
 
 //loader
 
 function loader () {
-  const preloader = document.querySelector('#preloader')
-  if (!preloader.classList.contains('done')) {
-    preloader.classList.add('done')
+  let timerLoaderInit,
+    timerLoader
+  if (preloader) {
+    timerLoaderInit = setInterval(function () {
+      if (!preloader.classList.contains('done')) {
+        preloader.classList.add('done')
+        timerLoader = setTimeout(function () {
+          preloader.parentNode.removeChild(preloader)
+        }, 1000)
+      } else {
+        clearInterval(timerLoaderInit)
+        clearTimeout(timerLoader)
+      }
+    }, 2000)
   }
 }
+
+// timerID
 
 // style height
 
@@ -44,8 +63,8 @@ function BgPosition (elem) {
 
 function scrollBy () {
   const windowsTop = window.pageYOffset,
-        menuHeight = parseInt(getComputedStyle(menuFix).height, 10),
-        height = parseInt(getComputedStyle(parallax).height, 10)
+    menuHeight = parseInt(getComputedStyle(menuFix).height, 10),
+    height = parseInt(getComputedStyle(parallax).height, 10)
   for (item of sections) {
     if (windowsTop <= height) {
       item.setAttribute('scrolls', false)
@@ -63,13 +82,32 @@ function scrollBy () {
   }
 }
 
-
 function animateShow (array) {
   for (item of array) {
     console.log(item.getBoundingClientRect().bottom)
-    if (item.getBoundingClientRect().bottom<=100 && item.getBoundingClientRect().bottom>=70) {
+    if (item.getBoundingClientRect().bottom <= 100 && item.getBoundingClientRect().bottom >= 70) {
 
       item.classList.add('slide-bottom')
     }
   }
+}
+
+// window width
+
+function windowWidth () {
+  return window.innerWidth
+}
+
+function slider (elem) {
+  let itemsLength = elem.children.length - 2,
+    step = -100
+  if (count < itemsLength) {
+    count=count+1
+    console.log(count)
+  } else {
+    count = 0
+  }
+  elem.style.transform = `translateX(${count * step}%)`
+
+  return console.log(elem)
 }

@@ -1,10 +1,26 @@
 .wrapper {
   margin: 0 auto;
+  position: relative;
+  @media screen and (min-width:$smDesktopWidth) {
+  height: 100vh;
+  overflow: hidden;
+  }
 }
 
 .content-wrapper {
   position: relative;
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
+  transition: transform .2s linear;
+  @media screen and (min-width:$smDesktopWidth) {
+    display: flex;
+    height: 100%;
+    section {
+      width: 100%;
+      min-height: 100vh;
+      flex: 0 0 100%;
+    }
+  }
 }
 
 .container {
@@ -37,7 +53,8 @@ section, .section {
   align-content: center;
   justify-content: center;
   .container {
-    padding: 100px 0;
+    padding-top: rem(100px);
+    padding-bottom: rem(100px);
   }
   @media (min-width: $tableWidth) and (max-width: $desktopWidth) {
     padding: 36px 0;
@@ -53,5 +70,8 @@ section, .section {
   background-color: $background;
 }
 
-.bgblock {
+.grid {
+  margin-right: rem(-20px);
+  margin-left: rem(20px);
+  padding-right: rem(40px);
 }

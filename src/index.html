@@ -2,135 +2,147 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Webpack</title>
-    <link href="/assets/css/app.css" rel="stylesheet"></head>
+</head>
 <body>
 <!-- Preloader -->
 
 <div id="preloader">
-    <div id="status"></div>
+    <div class="loader">
+        <img src="/assets/img/loader.png" alt="Прелоадер">
+    </div>
+    <div class="preloader-left">
+        <img src="/assets/img/loader-left.png" alt="Прелоадер">
+    </div>
+    <div class="preloader-right">
+        <img src="/assets/img/loader-right.png" alt="Прелоадер">
+    </div>
 </div>
 <!-- end Preloader -->
 
 <!-- main wrapper -->
 <div class="wrapper">
     <!-- header for content -->
-    <!-- parallax.scss -->
-    <section id="home" class="bg-parallax">
-        <div class="home-overlay"></div>
-        <div class="intro">
-            <div class="start">Привет, меня зовут Мария Полякова и я</div>
-            <h1>Frontend Web Developer</h1>
-        </div>
-        <a href="#services">
-            <div class="scroll-down">
-            <span>
-<!--                <img src="/assets/img/css.svg" alt="">-->
-            </span>
-            </div>
-        </a>
 
-    </section>
-    <!-- parallax.scss end -->
-    <!-- header-->
-    <div class="stick scroll-by" scrolls="false">
-        <header class="header">
-            <div class="container">
-                <nav class="navbar" role="navigation">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-                        <a class="navbar-brand" href="index.html">Maria Polyakova</a>
-                    </div>
-
-                    <div class="navbar-collapse">
-                        <ul class="navbar-collapse-list">
-                            <li><a href="#home">Главная</a></li>
-                            <li><a href="#skills">Навыки</a></li>
-                            <li><a href="#portfolio">Портфолио</a></li>
-                            <li><a href="#contact">Контакты</a></li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
-    </div>
-    <!-- end header for content -->
     <!-- wrapper for content -->
     <div class="content-wrapper">
         <!-- Skills start -->
+        <!-- parallax.scss -->
+        <section id="home" class="bg-parallax">
+            <div class="home-overlay"></div>
+            <div class="intro">
+                <div class="start">Привет, меня зовут Мария Полякова и я</div>
+                <h1>Frontend Web Developer</h1>
+            </div>
+            <a href="#services">
+                <div class="scroll-down">
+            <span>
+<!--                <img src="/assets/img/css.svg" alt="">-->
+            </span>
+                </div>
+            </a>
 
+        </section>
+        <!-- parallax.scss end -->
+        <!-- header-->
+        <div class="stick scroll-by" scrolls="false">
+            <header class="header">
+                <div class="container">
+                    <div class="grid">
+                        <nav class="navbar" role="navigation">
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </button>
+                                <a class="navbar-brand" href="index.html">Maria Polyakova</a>
+                            </div>
+
+                            <div class="navbar-collapse">
+                                <ul class="navbar-collapse-list">
+                                    <li><a href="#home">Главная</a></li>
+                                    <li><a href="#skills">Навыки</a></li>
+                                    <li><a href="#portfolio">Портфолио</a></li>
+                                    <li><a href="#contact">Контакты</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+        </div>
+        <!-- end header for content -->
         <section class="bgblock-gray scroll-by" id="skills" scrolls="false">
 
             <div class="container animate">
-                <h2 class="title2">Навыки</h2>
-                <div class="grid-skill">
-                    <div class="block-skill">
-                        <h3>Frontend</h3>
-                        <div class="block-skill-items">
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/html5.svg" alt="Html5"><span>HTML5</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/css.svg" alt="Css"><span>CSS3</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/js.svg" alt="JS"><span>JavaScript</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/sass.svg" alt="Sass"><span>SASS/SCSS</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-skill">
-                        <h3>Frameworks</h3>
-                        <div class="block-skill-items">
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/boot.svg" alt="Bootstrap"><span>Bootstrap</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/vue.svg" alt="Vue"><span>VueJS</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/react.svg" alt="React"><span>React</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/JQuery.svg" alt="React"><span>JQuery</span>
+                <div class="grid"><h2 class="title2">Навыки</h2>
+                    <div class="grid-skill">
+                        <div class="block-skill">
+                            <h3>Frontend</h3>
+                            <div class="block-skill-items">
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/html5.svg" alt="Html5"><span>HTML5</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/css.svg" alt="Css"><span>CSS3</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/js.svg" alt="JS"><span>JavaScript</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/sass.svg" alt="Sass"><span>SASS/SCSS</span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="block-skill">
-                        <h3>Tools</h3>
-                        <div class="block-skill-items">
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/git-logo.svg" alt="GitHub"><span>Git</span>
+                        <div class="block-skill">
+                            <h3>Frameworks</h3>
+                            <div class="block-skill-items">
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/boot.svg" alt="Bootstrap"><span>Bootstrap</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/vue.svg" alt="Vue"><span>VueJS</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/react.svg" alt="React"><span>React</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/JQuery.svg" alt="React"><span>JQuery</span>
+                                </div>
                             </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/github.svg" alt="GitHub"><span>GitHub</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/gitlab.svg" alt="GitHub"><span>GitLab</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/yarn.svg" alt="Yarn"><span>Yarn</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/npm.svg" alt="Npm"><span>Npm</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/webpack.svg" alt="Webpack"><span>Webpack</span>
-                            </div>
-                            <div class="block-skill-items-item">
-                                <img src="/assets/img/icons/babels.svg" alt="Babel"><span>Babel</span>
+                        </div>
+                        <div class="block-skill">
+                            <h3>Tools</h3>
+                            <div class="block-skill-items">
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/git-logo.svg" alt="GitHub"><span>Git</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/github.svg" alt="GitHub"><span>GitHub</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/gitlab.svg" alt="GitHub"><span>GitLab</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/yarn.svg" alt="Yarn"><span>Yarn</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/npm.svg" alt="Npm"><span>Npm</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/webpack.svg" alt="Webpack"><span>Webpack</span>
+                                </div>
+                                <div class="block-skill-items-item">
+                                    <img src="/assets/img/icons/babels.svg" alt="Babel"><span>Babel</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
             </div>
 
         </section>
@@ -139,8 +151,6 @@
         <section id="portfolio" class="bgblock scroll-by" scrolls="false">
             <div class="container animate">
                 <h2 class="title2">Мои работы</h2>
-
-
                 <div class="grid-portfolio">
                     <div class="grid-portfolio-items">
                         <a href="beryoga.html">
@@ -209,8 +219,6 @@
                         </a>
                     </div>
                 </div>
-
-
             </div><!-- contaier -->
 
         </section>
@@ -218,18 +226,20 @@
         <!-- mail  -->
         <section class="bgblock-gray scroll-by" id="mail" scrolls="false">
             <div class="container animate">
-                <h2 class="title2">Напишите мне</h2>
-                <p>Если у вас возникли вопросы, просто напишите мне.</p>
-                <form action="form-mail" class="form-mail">
-                    <label>
-                        <input type="text" placeholder="Имя">
-                    </label>
-                    <label>
-                        <input type="text" placeholder="E-mail">
-                    </label>
-                    <textarea placeholder="Сообщение"></textarea>
-                    <button class="btn">Отправить</button>
-                </form>
+                <div class="grid">
+                    <h2 class="title2">Напишите мне</h2>
+                    <p>Если у вас возникли вопросы, просто напишите мне.</p>
+                    <form action="form-mail" class="form-mail">
+                        <label>
+                            <input type="text" placeholder="Имя">
+                        </label>
+                        <label>
+                            <input type="text" placeholder="E-mail">
+                        </label>
+                        <textarea placeholder="Сообщение"></textarea>
+                        <button class="btn">Отправить</button>
+                    </form>
+                </div>
             </div>
         </section>
         <!-- end mail  -->

@@ -1,6 +1,6 @@
 #preloader {
   position: fixed;
-  background: #FFF;
+  display: flex;
   top: 0;
   left: 0;
   z-index: 200;
@@ -8,22 +8,57 @@
   height: 100%;
   overflow: visible;
   opacity: 1;
-  transition: .3s linear;
+  transition: 1.5s linear;
+  .loader {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    img {
+      -webkit-animation: loader 4s linear infinite;
+      animation: loader 4s linear infinite;
+      transform-origin: center;
+    }
+  }
+ .preloader-left, .preloader-right {
+   background-color: black;
+   width: 50%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   transition: 1s linear;
+   img {
+     display: none;
+     width: 100px;
+     height: 200px;
+   }
+ }
+  .preloader-left {
+    justify-content: flex-end;
+
+  }
+  .preloader-right {
+    justify-content: flex-start;
+  }
   &.done {
     opacity: 0;
-    overflow: hidden;
-    display: none;
-  }
+img {
+  display: none;
 }
-
-#status {
-  background-image: url(/assets/img/preloader.gif);
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px;
-  left: 50%;
-  margin: -100px 0 0 -100px;
-  position: absolute;
-  top: 50%;
-  width: 200px;
+    .preloader-left, .preloader-right {
+      img {
+        display: block;
+      }
+    }
+    .preloader-left {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    .preloader-right {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
 }
