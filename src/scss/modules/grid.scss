@@ -36,6 +36,9 @@ section, .section {
   align-items: center;
   align-content: center;
   justify-content: center;
+  .container {
+    padding: 100px 0;
+  }
   @media (min-width: $tableWidth) and (max-width: $desktopWidth) {
     padding: 36px 0;
   }

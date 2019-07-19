@@ -1,10 +1,11 @@
 .stick {
-  height: 51px;
+  height: 57px;
 }
 
 .header {
   border-bottom: 1px solid #f5f5f5;
   background-color: white;
+  height: 57px;
   position: relative;
   width: 100%;
   z-index: 99;
@@ -23,11 +24,14 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 10px;
 
   &-header {
     max-width: 50%;
     width: 100%;
+    line-height: 57px;
+    &:hover {
+      color: $danger-color;
+    }
     @media screen and (max-width: $tableWidth) {
       display: flex;
       justify-content: space-between;
@@ -56,7 +60,7 @@
   &-collapse {
     max-width: 50%;
     width: 100%;
-    line-height: rem(35px);
+    line-height: 57px;
       ul.active {
         visibility: visible;
       }
