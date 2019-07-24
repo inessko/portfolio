@@ -1,44 +1,77 @@
 const parallax = document.querySelector('#home'),
-  speedParallax = 0.08,
   menuFix = document.querySelector('.header'),
   sections = document.querySelectorAll('.scroll-by'),
   animateItems = document.querySelectorAll('.animate'),
   preloader = document.querySelector('#preloader'),
-  sliderItem = document.querySelector('.content-wrapper')
-let count = 0
+  contentWrapper = document.querySelector('.content-wrapper'),
+  sliderItems = document.querySelectorAll('.content-wrapper section'),
+  menuLine = document.querySelector('.menu-desktop-fix-line')
+menuChecked = document.querySelectorAll('.menu-desktop-fix-line-form-flex-input input')
+
+const step = -100,
+  speedParallax = 0.08
+
+let timerLoaderInit,
+  timerLoader,
+  currentSlideIndex
+
 window.onload = function () {
-  let width = windowWidth()
-  console.log(width)
   loader()
-  heightParallax(parallax)
-  document.body.addEventListener('wheel', function () {
-    slider(sliderItem)
-  })
-  window.onscroll = () => {
-    BgPosition(parallax)
-    scrollBy()
-    animateShow(animateItems)
+  console.log(menuChecked)
+  const nextSlide = slider(contentWrapper, sliderItems)
+  if (windowWidth() >= 1024) {
+    if ('onwheel' in document) {
+      document.body.addEventListener('wheel', function (event) {
+        nextSlide(event)
+      })
+    } else if ('onmousewheel' in document) {
+      // old event
+      document.body.addEventListener('mousewheel', function (event) {
+        nextSlide(event)
+      })
+    } else if ('MozMousePixelScroll' in document) {
+      // Firefox < 17
+      document.body.addEventListener('MozMousePixelScroll', function (event) {
+        nextSlide(event)
+      })
+    } else { // IE8-
+      document.body.addEventListener('onmousewheel', function (event) {
+        nextSlide(event)
+      })
+    }
+
   }
+
+
+  function handlerClick (event) {
+    console.log(event)
+  }
+
+  heightParallax(parallax)
+  // window.onscroll = () => {
+  //   //   BgPosition(parallax)
+  //   //   scrollBy()
+  //   //   animateShow(animateItems)
+  //   // }
 }
 
 //loader
 
 function loader () {
-  let timerLoaderInit,
-    timerLoader
   if (preloader) {
     timerLoaderInit = setInterval(function () {
       if (!preloader.classList.contains('done')) {
         preloader.classList.add('done')
         timerLoader = setTimeout(function () {
-          preloader.parentNode.removeChild(preloader)
+          preloader.style.display = 'none'
         }, 1000)
       } else {
         clearInterval(timerLoaderInit)
         clearTimeout(timerLoader)
       }
-    }, 2000)
+    }, 1100)
   }
+
 }
 
 // timerID
@@ -98,16 +131,47 @@ function windowWidth () {
   return window.innerWidth
 }
 
-function slider (elem) {
-  let itemsLength = elem.children.length - 2,
-    step = -100
-  if (count < itemsLength) {
-    count=count+1
-    console.log(count)
-  } else {
-    count = 0
-  }
-  elem.style.transform = `translateX(${count * step}%)`
+function slider (wrap, items) {
+  return function (event) {
+    if (preloader.classList.contains('done')) {
+      if (currentSlideIndex < items.length - 1 && currentSlideIndex >= 0) {
+        if (event.deltaY > 0) {
+          currentSlideIndex++
+        } else if (currentSlideIndex > 0) {
+          currentSlideIndex--
+        }
+      } else if (currentSlideIndex === items.length - 1 && event.deltaY < 0) {
+        currentSlideIndex--
 
-  return console.log(elem)
+      } else {
+        currentSlideIndex = 0
+      }
+
+      wrap.style.transform = `translateY(${currentSlideIndex * step}%)`
+      checked(currentSlideIndex)
+if (currentSlideIndex>0) {
+  menuLine.classList.add('menu-black')
+} else menuLine.classList.remove('menu-black')
+    }
+  }
 }
+
+function checked (step) {
+  menuChecked[step].checked = true
+}
+
+menuLine.addEventListener('click', function checkedClick (event) {
+
+  for (let i = 0; i <= menuChecked.length; i++) {
+    if (event.target === menuChecked[i]) {
+      currentSlideIndex = i
+      if (currentSlideIndex>0) {
+        menuLine.classList.add('menu-black')
+      } else menuLine.classList.remove('menu-black')
+      contentWrapper.style.transform = `translateY(${currentSlideIndex * step}%)`
+    }
+  }
+})
+
+
+

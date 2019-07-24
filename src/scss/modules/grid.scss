@@ -3,6 +3,7 @@
   position: relative;
   @media screen and (min-width:$smDesktopWidth) {
   height: 100vh;
+    min-height: 100vh;
   overflow: hidden;
   }
 }
@@ -10,11 +11,12 @@
 .content-wrapper {
   position: relative;
   width: 100%;
-  height: 100vh;
-  transition: transform .2s linear;
   @media screen and (min-width:$smDesktopWidth) {
     display: flex;
-    height: 100%;
+    flex-direction: column;
+    height: 100vh;
+    min-height: 100vh;
+    transition: transform .3s linear;
     section {
       width: 100%;
       min-height: 100vh;
