@@ -27,49 +27,50 @@
         <span></span>
         <span></span>
     </button>
-<div class="menu-desktop-fix">
-    <div class="menu-desktop-fix-line">
-        <form class="menu-desktop-fix-line-form">
-            <div class="menu-desktop-fix-line-form-flex">
-                <div class="menu-desktop-fix-line-form-flex-text">
-                    Главная
-                </div>
-                <div class="menu-desktop-fix-line-form-flex-input">
-                    <input type="radio" id="radio-1" name="menuChek"  checked><label
-                        for="radio-1"></label>
-                </div>
-            </div>
-            <div class="menu-desktop-fix-line-form-flex">
-                <div class="menu-desktop-fix-line-form-flex-text">
-                    Навыки
-                </div>
-                <div class="menu-desktop-fix-line-form-flex-input">
-                    <input type="radio" id="radio-2" name="menuChek"><label
-                        for="radio-2"></label>
-                </div>
-            </div>
-            <div class="menu-desktop-fix-line-form-flex">
-                <div class="menu-desktop-fix-line-form-flex-text">
-                    Портфолио
-                </div>
-                <div class="menu-desktop-fix-line-form-flex-input">
-                    <input type="radio" id="radio-3" name="menuChek"><label
-                        for="radio-3"></label>
-                </div>
+    <div class="menu-desktop-fix">
+        <div class="menu-desktop-fix-line">
+            <form class="menu-desktop-fix-line-form">
+                <div class="menu-desktop-fix-line-form-flex">
+                    <div class="menu-desktop-fix-line-form-flex-text"><span>Главная</span>
 
-            </div>
-            <div class="menu-desktop-fix-line-form-flex">
-                <div class="menu-desktop-fix-line-form-flex-text">
-                    Контакты
+                    </div>
+                    <div class="menu-desktop-fix-line-form-flex-input">
+                        <input type="radio" id="radio-1" name="menuChek" checked><label
+                            for="radio-1"></label>
+                    </div>
                 </div>
-                <div class="menu-desktop-fix-line-form-flex-input">
-                    <input type="radio" id="radio-4" name="menuChek"><label
-                        for="radio-4"></label>
+                <div class="menu-desktop-fix-line-form-flex">
+                    <div class="menu-desktop-fix-line-form-flex-text">
+                        <span>Навыки</span>
+                    </div>
+                    <div class="menu-desktop-fix-line-form-flex-input">
+                        <input type="radio" id="radio-2" name="menuChek"><label
+                            for="radio-2"></label>
+                    </div>
                 </div>
-            </div>
-        </form>
+                <div class="menu-desktop-fix-line-form-flex">
+                    <div class="menu-desktop-fix-line-form-flex-text"><span>Портфолио</span>
+
+                    </div>
+                    <div class="menu-desktop-fix-line-form-flex-input">
+                        <input type="radio" id="radio-3" name="menuChek"><label
+                            for="radio-3"></label>
+                    </div>
+
+                </div>
+                <div class="menu-desktop-fix-line-form-flex">
+                    <div class="menu-desktop-fix-line-form-flex-text"><span>Контакты</span>
+
+                    </div>
+                    <div class="menu-desktop-fix-line-form-flex-input">
+                        <input type="radio" id="radio-4" name="menuChek"><label
+                            for="radio-4"></label>
+                    </div>
+                </div>
+            </form>
+        </div>
     </div>
-</div></div>
+</div>
 <!-- main wrapper -->
 <div class="wrapper">
     <!-- header for content -->
@@ -278,14 +279,14 @@
                     <h2 class="title2">Напишите мне</h2>
                     <p>Если у вас возникли вопросы, просто напишите мне.</p>
                     <form action="form-mail" class="form-mail">
-                        <label>
-                            <input type="text" placeholder="Имя">
-                        </label>
-                        <label>
-                            <input type="text" placeholder="E-mail">
-                        </label>
-                        <textarea placeholder="Сообщение"></textarea>
-                        <button class="btn">Отправить</button>
+                            <input type="text" placeholder="Имя" checked class="input-name">
+                            <p>Введите ваше имя</p>
+
+                            <input type="text" placeholder="E-mail" class="input-mail">
+                            <p>Введите ваш E-mail</p>
+                        <textarea placeholder="Сообщение" class="input-comment"></textarea>
+                        <p>Введите сообщение</p>
+                        <button class="btn form-btn">Отправить</button>
                     </form>
                 </div>
             </div>

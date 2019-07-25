@@ -10,3 +10,6 @@ import './components/show'
 
 //*== Parallax and Loader ==*//
 import './components/parallax'
+
+//*== Mail ==*//
+import './components/mail'

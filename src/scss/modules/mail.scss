@@ -10,20 +10,35 @@
     max-width: 500px;
     margin: 0 auto;
 
-    label, textarea {
-      margin-top: 10px;
+    input, textarea {
       width: 100%;
+      border-radius: 3px;
+      padding: 0 15px;
+      color: inherit;
+      font-size: 14px;
+      margin-top: 10px;
       height: 30px;
       border: 1px solid $border;
-      border-radius: 3px;
-      input {
-        width: 100%;
-        height: 100%;
-        border-radius: 3px;
-        padding: 0 15px;
-        color: inherit;
-        font-size: 14px;
+      transition: .2s linear;
+
+      &:focus {
+        border: 2px solid rgba($danger-color, .7);
       }
+    }
+
+    input.error + p, textarea.error + p {
+      opacity: 1;
+      visibility: visible;
+      height: auto;
+    }
+
+    input + p, textarea + p {
+      font-size: rem(12px);
+      color: $danger;
+      height: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: .2s linear;
     }
 
     textarea {
@@ -33,6 +48,7 @@
       color: inherit;
       font-size: 14px;
     }
+
     button {
       width: 150px;
       margin: 20px auto 0;
