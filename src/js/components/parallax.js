@@ -6,10 +6,12 @@ const parallax = document.querySelector('#home'),
   contentWrapper = document.querySelector('.content-wrapper'),
   sliderItems = document.querySelectorAll('.content-wrapper section'),
   menuLine = document.querySelector('.menu-desktop-fix-line'),
-  menuChecked = document.querySelectorAll('.menu-desktop-fix-line-form-flex-input input')
+  menuChecked = document.querySelectorAll('.menu-desktop-fix-line-form-flex-input input'),
+  anchors = document.querySelectorAll('a[href*="#"]')
 
 const step = -100,
-  speedParallax = 0.08
+  speedParallax = 0.08,
+  activeFunctionWidth = 1200
 
 let timerLoaderInit,
   timerLoader,
@@ -17,7 +19,8 @@ let timerLoaderInit,
 
 window.onload = function () {
   loader()
-  console.log(menuChecked)
+  BgPosition(parallax)
+  scrollMobil ()
   const nextSlide = slider(contentWrapper, sliderItems)
   if ('onwheel' in document) {
     document.body.addEventListener('wheel', function (event) {
@@ -38,8 +41,12 @@ window.onload = function () {
       nextSlide(event)
     })
   }
+window.onscroll = function () {
+  BgPosition(parallax)
+  // heightParallax(parallax)
+  // scrollBy ()
+}
 
-  heightParallax(parallax)
 }
 
 //loader
@@ -60,11 +67,6 @@ function loader () {
   }
 }
 
-// style height
-
-function heightParallax (elem) {
-  elem.style.backgroundPosition = `50% 0px`
-}
 
 // window width
 
@@ -74,7 +76,7 @@ function windowWidth () {
 
 function slider (wrap, items) {
   return function (event) {
-    if (preloader.classList.contains('done') && windowWidth() >= 1024) {
+    if (preloader.classList.contains('done') && windowWidth() >= activeFunctionWidth) {
       if (currentSlideIndex < items.length - 1 && currentSlideIndex >= 0) {
         if (event.deltaY > 0) {
           currentSlideIndex++
@@ -126,44 +128,51 @@ menuLine.addEventListener('click', function checkedClick (event) {
 })
 
 //scroll
-function scrollBy () {
-  const windowsTop = window.pageYOffset,
-    menuHeight = parseInt(getComputedStyle(menuFix).height, 10),
-    height = parseInt(getComputedStyle(parallax).height, 10)
-  for (item of sections) {
-    if (windowsTop <= height) {
-      item.setAttribute('scrolls', false)
-    }
-    let itemTop = item.getBoundingClientRect().top
-    if (itemTop >= menuHeight && itemTop <= 120) {
-      let topScroll = itemTop - menuHeight
-      if (windowsTop >= height) {
-        if (item.getAttribute('scrolls') === 'false') {
-          window.scrollBy(0, topScroll)
-          item.setAttribute('scrolls', true)
-        }
-      }
-    }
-  }
-}
-
-function animateShow (array) {
-  for (item of array) {
-    console.log(item.getBoundingClientRect().bottom)
-    if (item.getBoundingClientRect().bottom <= 100 && item.getBoundingClientRect().bottom >= 70) {
-
-      item.classList.add('slide-bottom')
-    }
-  }
-}
+// function scrollBy () {
+//   const windowsTop = window.pageYOffset,
+//     menuHeight = parseInt(getComputedStyle(menuFix).height, 10),
+//     height = parseInt(getComputedStyle(parallax).height, 10)
+//   for (item of sections) {
+//     if (windowsTop <= height) {
+//       item.setAttribute('scrolls', false)
+//     }
+//     let itemTop = item.getBoundingClientRect().top
+//     if (itemTop >= menuHeight && itemTop <= 120) {
+//       let topScroll = itemTop - menuHeight
+//       if (windowsTop >= height) {
+//         if (item.getAttribute('scrolls') === 'false') {
+//           window.scrollBy(0, topScroll)
+//           item.setAttribute('scrolls', true)
+//         }
+//       }
+//     }
+//   }
+// }
 
 // style background-position
 function BgPosition (elem) {
-  const windowsTop = window.pageYOffset,
-    height = parseInt(getComputedStyle(parallax).height, 10)
-  if (windowsTop <= height) {
-    const positionY = Math.round(windowsTop * speedParallax)
-    elem.style.backgroundPosition = `50% -${positionY}px`
-    if (menuFix.getBoundingClientRect().top >= 0) return menuFix.classList.remove('fix')
-  } else menuFix.classList.add('fix')
+  if (windowWidth()<activeFunctionWidth) {
+    const windowsTop = window.pageYOffset,
+      height = parseInt(getComputedStyle(parallax).height, 10)
+    if (windowsTop <= height) {
+      const positionY = Math.round(windowsTop * speedParallax)
+      elem.style.backgroundPosition = `50% -${positionY}px`
+      if (menuFix.getBoundingClientRect().top >= 0) return menuFix.classList.remove('fix')
+    } else menuFix.classList.add('fix')
+  }
+}
+
+function scrollMobil () {
+  if (windowWidth()<activeFunctionWidth&& anchors) {
+    for (let anchor of anchors) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+        const blockID = anchor.getAttribute('href')
+        document.querySelector('' + blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        })
+      })
+    }
+  }
 }

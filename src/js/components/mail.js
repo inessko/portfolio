@@ -1,35 +1,37 @@
 import {classAdd, classRemove} from './parallax'
 
-const inputName = document.querySelector('.input-name'),
+const formMail = document.querySelector('.form-mail'),
+  inputName = document.querySelector('.input-name'),
   inputMail = document.querySelector('.input-mail'),
   inputComment = document.querySelector('.input-comment'),
-  formBnt = document.querySelector('.form-btn')
+  formBnt = document.querySelector('.form-btn'),
+  rexValidateMail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 
-formBnt.addEventListener('click', function (event) {
+
+
+formMail.addEventListener('submit', function (event) {
   event.preventDefault()
   let valueName = inputName.value
   let valueMail = inputMail.value
   let valueComment = inputComment.value
-  if (!valueName) {
-    classAdd(inputName, 'error')
-  }else classRemove(inputName,'error')
-  if (!valueMail){
-    classAdd(inputMail, 'error')
-  } else classRemove(inputMail,'error')
-  if (!valueComment){
-    classAdd(inputComment, 'error')
-  }else classRemove(inputComment,'error')
-  console.log(event)
+  if (valueName) {
+    classRemove(inputName, 'error')
+  }else classAdd(inputName,'error')
+  if (valueMail){
+    classRemove(inputMail, 'error')
+    ValidateEmail(valueMail)
+  } else classAdd(inputMail, 'error')
+  if (valueComment){
+    classRemove(inputComment, 'error')
+  }else classAdd(inputComment,'error')
 
 })
 
-
-function ValidateEmail(mail)
-{
-  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(myForm.emailAddr.value))
+function ValidateEmail(mail) {
+  if (rexValidateMail.test(mail))
   {
-    return (true)
-  }
-  alert("You have entered an invalid email address!")
-  return (false)
+    classRemove(inputMail, 'error')
+    return
+  } else classAdd(inputMail, 'error')
+  console.log('dsdj')
 }

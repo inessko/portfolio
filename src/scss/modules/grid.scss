@@ -1,7 +1,7 @@
 .wrapper {
   margin: 0 auto;
   position: relative;
-  @media screen and (min-width:$smDesktopWidth) {
+  @media screen and (min-width:$desktopWidth) {
   height: 100vh;
     min-height: 100vh;
   overflow: hidden;
@@ -11,7 +11,11 @@
 .content-wrapper {
   position: relative;
   width: 100%;
-  @media screen and (min-width:$smDesktopWidth) {
+  @media screen and (max-width:$smDesktopWidth) {
+    transform: none!important;
+  }
+
+  @media screen and (min-width:$desktopWidth) {
     display: flex;
     flex-direction: column;
     height: 100vh;

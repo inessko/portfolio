@@ -11,7 +11,7 @@
   background-size: cover;
   padding: 0;
   .home-overlay {
-    background-color: rgba(44, 62, 80, 0.3);
+    background-color: rgba(44, 62, 80, 0.8);
     background-image: url("/assets/img/pattern.png");
     background-repeat: repeat;
     height: 100%;
@@ -36,8 +36,10 @@
     color: white;
     .start {
       font-size: 16px;
-      text-transform: none;
+      text-transform: uppercase;
+      font-family: $titleFont3;
       margin: 15px 0;
+      letter-spacing: 4px;
     }
     h1 {
       color: $light-color;

@@ -92,6 +92,9 @@
           margin: 0 auto;
           text-align: center;
           line-height: 1.2;
+          @media screen and (max-width: $tableWidth) {
+            font-size: rem(15px);
+          }
         }
         p {
           opacity: 0;
@@ -102,7 +105,7 @@
           padding: 20px 30px;
           text-align: center;
           visibility: hidden;
-          @media screen and (max-width: $phoneWidth) {
+          @media screen and (max-width: $smDesktopWidth) {
             display: none;
           }
         }

@@ -9,7 +9,7 @@
     flex-basis: 50%;
     text-align: center;
     margin-top: rem(50px);
-    @media screen and (max-width:$phoneWidth ) {
+    @media screen and (max-width:$smDesktopWidth ) {
       max-width: 100%;
       flex-basis: 100%;
     }
@@ -19,6 +19,7 @@
       flex-wrap: wrap;
       min-width: 200px;
       margin-top: rem(20px);
+      margin-right: -1em;
       &-item:first-child {
         margin-left: 0;
       }
